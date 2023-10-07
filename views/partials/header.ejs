@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Document</title>
+  </head>
+  <header>
+    <nav>
+      <div>
+        <ul>
+          <li>
+            <a href="/work">work</a>
+          </li>
+          <li>
+            <a href="/">today</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <script>
+    function addItem() {
+      const newItemInput = document.getElementById('newItem');
+      const divTodoList = document.getElementsByClassName('item');
+      const newItemText = newItemInput.value.trim();
+      const pTodoList = document.getElementById('todoList');
+  
+      if (newItemText !== '') {
+        // Create a new list item
+        const divItem = document.createElement('div')
+        const listItem = document.createElement('p');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        listItem.appendChild(checkbox);
+        listItem.appendChild(document.createTextNode(newItemText));
+  
+        // Append the new item to the to-do list
+        
+        divTodoList.appendChild(pTodoList);
+ 
+  
+        // Clear the input field
+        newItemInput.value = '';
+      }
+    }
+  </script>
+  
+  
+</html>

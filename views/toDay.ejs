@@ -1,0 +1,15 @@
+<%- include('partials/header.ejs') %>
+
+<div class="container">
+  <h1><%= formattedDate %></h1>
+  <div class="box">
+    <div class="item">
+        <p id="todoList"></p>
+      <form name="todoForm" onsubmit="addItem(); return false;">
+        <!-- <input type="checkbox" /> -->
+        <input type="text" name="newItem" id="newItem" placeholder="New todo day" />
+        <button type="submit" name="list" value="toDay" list>+</button>
+      </form>
+    </div>
+  </div>
+</div>
