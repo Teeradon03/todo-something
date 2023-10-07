@@ -23,27 +23,32 @@
   <script>
     function addItem() {
       const newItemInput = document.getElementById('newItem');
-      const divTodoList = document.getElementsByClassName('item');
       const newItemText = newItemInput.value.trim();
-      const pTodoList = document.getElementById('todoList');
-  
+      
       if (newItemText !== '') {
-        // Create a new list item
-        const divItem = document.createElement('div')
+        // Create a new div for the to-do item
+        const divItem = document.createElement('div');
+        divItem.className = 'item'; // Add a class for styling, if needed
+
+        // Create a new p element for the to-do item's text
         const listItem = document.createElement('p');
+        listItem.appendChild(document.createTextNode(newItemText));
+
+        // Create a checkbox input
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
-        listItem.appendChild(checkbox);
-        listItem.appendChild(document.createTextNode(newItemText));
-  
-        // Append the new item to the to-do list
-        
-        divTodoList.appendChild(pTodoList);
- 
-  
+
+        // Append the checkbox and text to the div
+        divItem.appendChild(checkbox);
+        divItem.appendChild(listItem);
+
+        // Append the new item to the to-do list container
+        const todoListContainer = document.getElementById('todoList');
+        todoListContainer.appendChild(divItem);
+
         // Clear the input field
         newItemInput.value = '';
-      }
+      } 
     }
   </script>
   
