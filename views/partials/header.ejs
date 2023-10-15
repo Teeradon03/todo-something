@@ -1,56 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/main.css">
-    <title>Document</title>
-  </head>
-  <header>
-    <nav>
-      <div>
-        <ul>
-          <li>
-            <a href="/work">work</a>
-          </li>
-          <li>
-            <a href="/">today</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <script>
-    function addItem() {
-      const newItemInput = document.getElementById('newItem');
-      const newItemText = newItemInput.value.trim();
-      
-      if (newItemText !== '') {
-        // Create a new div for the to-do item
-        const divItem = document.createElement('div');
-        divItem.className = 'item'; // Add a class for styling, if needed
-
-        // Create a new p element for the to-do item's text
-        const listItem = document.createElement('p');
-        listItem.appendChild(document.createTextNode(newItemText));
-
-        // Create a checkbox input
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-
-        // Append the checkbox and text to the div
-        divItem.appendChild(checkbox);
-        divItem.appendChild(listItem);
-
-        // Append the new item to the to-do list container
-        const todoListContainer = document.getElementById('todoList');
-        todoListContainer.appendChild(divItem);
-
-        // Clear the input field
-        newItemInput.value = '';
-      } 
-    }
-  </script>
-  
-  
-</html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>To do List</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>

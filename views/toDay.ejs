@@ -1,15 +1,24 @@
-<%- include('partials/header.ejs') %>
+<%- include("header") -%>
 
-<div class="container">
-  <h1><%= formattedDate %></h1>
-  <div class="box">
-    <div class="item">
-        <p id="todoList"></p>
-      <form name="todoForm" onsubmit="addItem(); return false;">
-        <!-- <input type="checkbox" /> -->
-        <input type="text" name="newItem" id="newItem" placeholder="New todo day" />
-        <button type="submit" name="list" value="toDay" list>+</button>
-      </form>
-    </div>
-  </div>
+<div class="box" id="heading">
+    <h1> <%= listTitle %> </h1>
 </div>
+
+<div class="box">
+
+    <% for(var count=0; count<newlistItems.length; count++ ){ %>
+        <div class="item">
+            <input type="checkbox">
+            <p> <%= newlistItems[count] %> </p>
+        </div>
+    <%} %>
+
+    <form class="item" action="/" method="post">
+        <input type="text" name="newItem" placeholder="New Item" value="" autocomplete="off">
+
+        <button type="submit" name="list" value=<%= listTitle %> >+</button>
+    </form>
+
+</div>
+
+<%- include("footer") -%>
